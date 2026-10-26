@@ -32,7 +32,6 @@ nano urls.txt
 Plaintext
 [https://yourdomain.com](https://yourdomain.com)
 [https://seconddomain.com](https://seconddomain.com)
-[https://local-test-panel.itst-gsk.ru](https://local-test-panel.itst-gsk.ru)
 Шаг 3. Запуск установки
 Запустите установочный скрипт с правами суперпользователя (root):
 
