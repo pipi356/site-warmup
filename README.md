@@ -12,31 +12,35 @@ site-warmup/
 ├── urls.txt         # Список URL-адресов для прогрева (по одному на строку)
 ├── requirements.txt # Python-зависимости (Playwright)
 └── install.sh       # Интерактивный скрипт автоматической установки и настройки Cron
-
+```
 ## ⚡ Быстрый старт и установка
 Вы можете клонировать репозиторий и развернуть систему прогрева на вашем сервере Ubuntu 24.04 всего за пару минут.
 
 Шаг 1. Клонирование репозитория
-Bash
+```Bash
 git clone [https://github.com/ВАШ_ПОЛЬЗОВАТЕЛЬ/site-warmup.git](https://github.com/ВАШ_ПОЛЬЗОВАТЕЛЬ/site-warmup.git)
 cd site-warmup
+```
 (Замените ВАШ_ПОЛЬЗОВАТЕЛЬ/site-warmup на реальный путь к вашему репозиторию на GitHub).
 
 Шаг 2. Настройка списка сайтов
 Откройте файл urls.txt и добавьте адреса ваших сайтов (каждый с новой строки):
 
-Bash
+```Bash
 nano urls.txt
+```
 Пример содержимого:
 
-Plaintext
+```Plaintext
 [https://yourdomain.com](https://yourdomain.com)
 [https://seconddomain.com](https://seconddomain.com)
+```
 Шаг 3. Запуск установки
 Запустите установочный скрипт с правами суперпользователя (root):
 
-Bash
+```Bash
 sudo bash install.sh
+```
 В процессе установки скрипт:
 
 Установит необходимые системные библиотеки Python 3 и компоненты для Playwright (Chromium).
@@ -63,20 +67,25 @@ sudo bash install.sh
 Ручное изменение расписания
 Если вы захотите изменить расписание позже без переустановки, откройте редактор задач Cron:
 
-Bash
+```Bash
 sudo crontab -e
+```
 И отредактируйте строку таймера (например, 0 */4 * * *):
 
 Фрагмент кода
+```
 0 */4 * * * /opt/site-warmup/venv/bin/python /opt/site-warmup/warmup.py >> /var/log/site-warmup.log 2>&1
+```
 🛠️ Управление и мониторинг
 Ручной запуск теста прогрева:
 
-Bash
+```Bash
 sudo /opt/site-warmup/venv/bin/python /opt/site-warmup/warmup.py
+```
 Просмотр логов работы в реальном времени:
 
-Bash
+```Bash
 tail -f /var/log/site-warmup.log
+```
 📄 Лицензия
 Распространяется под свободной лицензией MIT. Вы можете свободно использовать и модифицировать код под свои задачи.
